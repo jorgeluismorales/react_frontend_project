@@ -11,6 +11,7 @@ import {
   MovieDetailPage,
   MoviesPage,
   MovieTrailerPage,
+  NotFoundPage,
   ProfilePage,
   SearchMoviesPage,
   SignInPage,
@@ -34,6 +35,7 @@ function App() {
           </Route>
           <Route path="profile" element={<ProfilePage />} />
         </Route>
+        <Route path="*" element={<NotFoundPage />} />
       </>
     )
   );
