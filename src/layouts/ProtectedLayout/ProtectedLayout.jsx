@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom"
+import Footer from "../../components/Footer/Footer"
 import NavBar from "../../components/NavBar/NavBar"
 
 const ProtectedLayout = () => {
@@ -6,6 +7,7 @@ const ProtectedLayout = () => {
     <div>
         <NavBar />
         <Outlet />
+        <Footer />
     </div>
   )
 }
