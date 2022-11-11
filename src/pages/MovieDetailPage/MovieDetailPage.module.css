@@ -1,0 +1,11 @@
+.playButton{
+    padding: 15px 30px;
+    background-color: #D3D3D3;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.playButton:hover{
+    background-color: #A9A9A9;
+}
