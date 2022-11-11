@@ -10,13 +10,14 @@ import PublicLayout from "./layouts/PublicLayout/PublicLayout";
 import {
   MovieDetailPage,
   MoviesGridPage,
-  MoviesPage,
+  HomePage,
   MovieTrailerPage,
   NotFoundPage,
   ProfilePage,
   SearchMoviesPage,
   SignInPage,
   SignUpPage,
+  TvGridPage,
 } from "./pages";
 
 function App() {
@@ -29,13 +30,14 @@ function App() {
         </Route>
 
         <Route path="/" element={<ProtectedLayout />}>
-          <Route index element={<MoviesPage />} />
+          <Route index element={<HomePage />} />
           <Route path="search" element={<SearchMoviesPage />} />
           <Route path=":type/:id" element={<MovieDetailPage />}>
             <Route path="video" element={<MovieTrailerPage />} />
           </Route>
           <Route path="profile" element={<ProfilePage />} />
           <Route path="movie" element={<MoviesGridPage />} />
+          <Route path="tv" element={<TvGridPage />} />
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </>
