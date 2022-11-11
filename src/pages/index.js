@@ -6,3 +6,4 @@ export {default as MovieDetailPage} from './MovieDetailPage/MovieDetailPage';
 export {default as MovieTrailerPage} from './MovieTrailerPage/MovieTrailerPage';
 export {default as ProfilePage} from './ProfilePage/ProfilePage';
 export {default as NotFoundPage} from './NotFoundPage/NotFoundPage';
+export {default as MoviesGridPage} from './MoviesGridPage/MoviesGridPage';

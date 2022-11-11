@@ -9,6 +9,7 @@ import ProtectedLayout from "./layouts/ProtectedLayout/ProtectedLayout";
 import PublicLayout from "./layouts/PublicLayout/PublicLayout";
 import {
   MovieDetailPage,
+  MoviesGridPage,
   MoviesPage,
   MovieTrailerPage,
   NotFoundPage,
@@ -34,6 +35,7 @@ function App() {
             <Route path="video" element={<MovieTrailerPage />} />
           </Route>
           <Route path="profile" element={<ProfilePage />} />
+          <Route path="movie" element={<MoviesGridPage />} />
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </>
