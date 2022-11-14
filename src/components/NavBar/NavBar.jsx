@@ -34,23 +34,18 @@ const NavBar = () => {
 
   <input type="text" className="search-click" name="" placeholder="Buscar..." />
 
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+
+  <div class="dropdown">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <img src={Avatar} width="30em"></img>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src={Avatar} width="30em"></img>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="#">Cuenta</a></li>
-            <li><a class="dropdown-item" href="#">Centro de Ayuda</a></li>
-            <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
+    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-lg-end">
+      <li><a class="dropdown-item" href="#">Cuenta</a></li>
+      <li><a class="dropdown-item" href="#">Centro de Ayuda</a></li>
+      <li><hr class="dropdown-divider"></hr></li>
+      <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+  </ul>
+</div>
 
 </nav>
     )
