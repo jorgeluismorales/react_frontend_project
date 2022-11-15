@@ -35,15 +35,15 @@ const NavBar = () => {
   <input type="text" className="search-click" name="" placeholder="Buscar..." />
 
 
-  <div class="dropdown">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+  <div className="dropdown">
+  <button className="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
     <img src={Avatar} width="30em"></img>
     </button>
-    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-lg-end">
-      <li><a class="dropdown-item" href="#">Cuenta</a></li>
-      <li><a class="dropdown-item" href="#">Centro de Ayuda</a></li>
-      <li><hr class="dropdown-divider"></hr></li>
-      <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+    <ul className="dropdown-menu dropdown-menu-dark dropdown-menu-lg-end">
+      <li><a className="dropdown-item" href="#">Cuenta</a></li>
+      <li><a className="dropdown-item" href="#">Centro de Ayuda</a></li>
+      <li><hr className="dropdown-divider"></hr></li>
+      <li><a className="dropdown-item" href="#">Cerrar Sesión</a></li>
   </ul>
 </div>
 
