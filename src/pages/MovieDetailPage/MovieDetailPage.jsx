@@ -46,7 +46,7 @@ const MovieDetailPage = () => {
                     backgroundSize: 'cover',
                     backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
                     backgroundPosition: 'center',
-                    height: '70vh',
+                    height: '75vh',
                     width: '100vw',
                     position: 'relative'
                   }}
@@ -66,7 +66,7 @@ const MovieDetailPage = () => {
                     >
                       <FaPlay /> VER AHORA
                     </button> <button className={styles.addFavButton}><GrAdd /></button><br />
-                    <div style={{ width: '30%', marginTop: '10px' }}><p>{movie.overview}</p></div>
+                    <div style={{ width: '45%', marginTop: '10px' }}><p>{movie.overview}</p></div>
                   </div>
                 </div>
                 <div className="row-6 mt-4">
@@ -80,7 +80,7 @@ const MovieDetailPage = () => {
                   </ul>
                   <div className="tab-content" id="pills-tabContent">
                     <div className="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
-                      <Slider items={related} type={type} />
+                      {related && <Slider items={related} type={type} />}
                     </div>
                     <div className="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
 
