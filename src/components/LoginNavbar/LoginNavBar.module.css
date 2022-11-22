@@ -1,0 +1,36 @@
+.signInBtn {
+    background-color:#e50914;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.selectLanguage {
+    background-color: #000;
+    color: #fff;
+    border: #fff 1px solid;
+    padding: 10px 5px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 30px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+  }
+
+  a:hover {
+    color: white;
+  }
