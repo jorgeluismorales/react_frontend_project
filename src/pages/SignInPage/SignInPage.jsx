@@ -12,6 +12,10 @@ import {
 import { Link } from "react-router-dom";
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
+googleProvider.setCustomParameters({
+  prompt: 'select_account'
+})
+
 const SignInPage = () => {
 
   const [email, setEmail] = useState('');
