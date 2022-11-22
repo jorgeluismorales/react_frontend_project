@@ -5,8 +5,8 @@ import app from "../../firebase/config";
 import {
   getAuth,
   signInWithEmailAndPassword,
-  signInWithRedirect,
   GoogleAuthProvider,
+  signInWithPopup,
 
 } from "firebase/auth";
 import { Link } from "react-router-dom";
@@ -26,6 +26,14 @@ const SignInPage = () => {
     signInWithEmailAndPassword(auth, email, password);
   }
 
+  const singInWithGoogle = async () => {
+    try {
+   await signInWithPopup(auth, googleProvider);
+  } catch (e) {
+    console.log(e);
+}
+  }
+
   return (
     <div className={styles.container}>
       <form className={styles.loginForm} onSubmit={handleSubmit}>
@@ -33,7 +41,7 @@ const SignInPage = () => {
         <input className={styles.inputForm} placeholder='Email' type="text" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
         <input className={styles.inputForm} placeholder='Password' type="password" name="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
         <button className={styles.loginBtn} type="submit">Iniciar sesión</button>
-        <button className={styles.googleLoginBtn} onClick={() => signInWithRedirect(auth, googleProvider)}><AiFillGoogleCircle /> Iniciar sesión con Google</button>
+        <button className={styles.googleLoginBtn} onClick={singInWithGoogle}><AiFillGoogleCircle /> Iniciar sesión con Google</button>
         <div className={styles.firstTimeOnNetflixTitle}>
         ¿Primera vez en Netflix? <Link to={'/'}>Suscríbete ahora.</Link>
         </div>
