@@ -17,6 +17,12 @@ const RegisterForm = () => {
     }
 
     return (
+        <div className={styles.container}>
+        <div className={styles.textContainer}>
+        <h1 className={styles.title}>Películas y series ilimitadas <br /> y mucho más</h1>
+        <h3 className={styles.subTitle}>Disfruta donde quieras. Cancela cuando quieras.</h3>
+        <h4  className={styles.text}>¿Quieres ver Netflix ya? Ingresa tu email para crear una cuenta o reiniciar tu membresía de Netflix.</h4>
+        </div>
         <form
             onSubmit={handleRegister}
             className={styles.formRegister}>
@@ -34,6 +40,7 @@ const RegisterForm = () => {
                 Comenzar <MdNavigateNext />
             </button>
         </form>
+        </div>
     )
 }
 
