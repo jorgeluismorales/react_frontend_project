@@ -46,20 +46,6 @@ const NavBar = () => {
 
         <input type="text" className="search-click" name="" placeholder="Buscar..." />
 
-
-<<<<<<< HEAD
-  <div className="dropdown">
-  <button className="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    <img src={Avatar} width="30em"></img>
-    </button>
-    <ul className="dropdown-menu dropdown-menu-dark dropdown-menu-lg-end">
-      <li><a className="dropdown-item" href="#">Cuenta</a></li>
-      <li><a className="dropdown-item" href="#">Centro de Ayuda</a></li>
-      <li><hr className="dropdown-divider"></hr></li>
-      <li><a className="dropdown-item" href="#">Cerrar Sesión</a></li>
-  </ul>
-</div>
-=======
         <div class="dropdown">
           <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             <img src={Avatar} width="30em" alt="avatar" />
@@ -71,8 +57,6 @@ const NavBar = () => {
             <li><Link class="dropdown-item" onClick={closeSession}>Cerrar Sesión</Link></li>
           </ul>
         </div>
->>>>>>> c2a6a4ff2bddcdad402e92fe633ac6d3d4f8d4dd
-
       </nav>
     )
   )
