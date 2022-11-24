@@ -1,5 +1,15 @@
+//import useApi from "../../hooks/useApi"
+import useApi from "../../hooks/useApi"
 const HomePage = () => {
-  return <div>HomePage</div>;
+
+  useApi()
+
+  return (
+    <>
+  <div>HomePage</div>
+  </>
+  )
+
 };
 
 export default HomePage;
