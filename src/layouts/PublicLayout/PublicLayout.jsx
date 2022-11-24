@@ -10,7 +10,7 @@ const PublicLayout = () => {
   const navigate = useNavigate();
   const location = useLocation()
 
-  const paths = ['/signup', '/signin']
+  const paths = ['/signup', '/signin', '/loginhelp']
   const path = location.pathname
 
   onAuthStateChanged(auth, (user) => {

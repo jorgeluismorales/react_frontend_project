@@ -39,22 +39,23 @@ const MovieDetailPage = () => {
           <Outlet />
           :
           movie && (
-            <div className="container-fluid">
+            <div>
               <div className="col">
                 <div className="row-6"
                   style={{
                     backgroundSize: 'cover',
                     backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
                     backgroundPosition: 'center',
-                    height: '75vh',
+                    height: '100vh',
                     width: '100vw',
                     position: 'relative'
                   }}
                 >
                   <div style={{
                     position: 'absolute',
-                    top: '50%',
+                    top: '20%',
                     left: '5%',
+                    color: 'white'
                   }}>
                     <div style={{ marginBottom: '20px' }}>
                       <h4>{type === 'movie' ? movie.title : movie.name}</h4>

@@ -42,6 +42,7 @@ const SignInPage = () => {
         <input className={styles.inputForm} placeholder='Password' type="password" name="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
         <button className={styles.loginBtn} type="submit">Iniciar sesión</button>
         <button className={styles.googleLoginBtn} onClick={singInWithGoogle}><AiFillGoogleCircle /> Iniciar sesión con Google</button>
+        <Link className={styles.link} to="/loginhelp">¿Olvidaste tu contraseña?</Link>
         <div className={styles.firstTimeOnNetflixTitle}>
         ¿Primera vez en Netflix? <Link to={'/'}>Suscríbete ahora.</Link>
         </div>
