@@ -8,3 +8,4 @@ export {default as ProfilePage} from './ProfilePage/ProfilePage';
 export {default as NotFoundPage} from './NotFoundPage/NotFoundPage';
 export {default as MoviesGridPage} from './MoviesGridPage/MoviesGridPage';
 export {default as TvGridPage} from './TvGridPage/TvGridPage';
+export {default as LoginHelpPage} from './LoginHelpPage/LoginHelpPage';
