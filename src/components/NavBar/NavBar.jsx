@@ -7,7 +7,6 @@ import { getAuth } from "firebase/auth";
 const auth = getAuth(app);
 
 const NavBar = () => {
-
   const navigate = useNavigate();
 
   const closeSession = () => {
@@ -16,7 +15,7 @@ const NavBar = () => {
   }
 
   return (
-    (
+      <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
           <Link to={'/home'}><img src={Logo} width="80em" alt="logo" /></Link>
@@ -46,7 +45,6 @@ const NavBar = () => {
 
         <input type="text" className="search-click" name="" placeholder="Buscar..." />
 
-
         <div class="dropdown">
           <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             <img src={Avatar} width="30em" alt="avatar" />
@@ -60,8 +58,8 @@ const NavBar = () => {
         </div>
 
       </nav>
-    )
+      </>
   )
 }
 
-export default NavBar
+export default NavBar;
