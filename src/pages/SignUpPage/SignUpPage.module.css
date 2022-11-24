@@ -1,0 +1,52 @@
+ .inputFormRegister {
+    background-color: #333;
+    color: #8c8c8c;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+}
+
+.inputFormRegister:focus {
+    outline: none;
+}
+
+.registerBtn {
+    background-color: #e50914;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 5px;
+    margin: 20px 0;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.registerBtn:hover {
+    background-color: #f40612;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.loginFormRegister {
+    display: flex;
+    flex-direction: column;
+    width: 460px;
+    padding: 20px;
+    background-color: #000;
+    border-radius: 10px;
+}

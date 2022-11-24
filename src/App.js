@@ -18,19 +18,21 @@ import {
   SignInPage,
   SignUpPage,
   TvGridPage,
+  LoginHelpPage,
 } from "./pages";
 
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
-        <Route path="/auth" element={<PublicLayout />}>
+        <Route path="/" element={<PublicLayout />}>
           <Route path="signin" element={<SignInPage />} />
           <Route path="signup" element={<SignUpPage />} />
+          <Route path="loginhelp" element={<LoginHelpPage />} /> 
         </Route>
 
-        <Route path="/" element={<ProtectedLayout />}>
-          <Route index element={<HomePage />} />
+        <Route element={<ProtectedLayout />}>
+          <Route path="home" element={<HomePage />} />
           <Route path="search" element={<SearchMoviesPage />} />
           <Route path=":type/:id" element={<MovieDetailPage />}>
             <Route path="video" element={<MovieTrailerPage />} />

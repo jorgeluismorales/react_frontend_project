@@ -1,0 +1,80 @@
+.googleLoginBtn {
+    background-color: #DB4437;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 10px;
+    margin: 20px 0;
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
+    cursor: pointer;
+}
+
+.googleLoginBtn:hover {
+    background-color: #C23326;
+}
+
+.inputForm {
+    background-color: #333;
+    color: #8c8c8c;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+}
+
+.inputForm:focus {
+    outline: none;
+}
+
+.loginBtn {
+    background-color: #e50914;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 5px;
+    margin: 20px 0;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.loginBtn:hover {
+    background-color: #c50914;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    padding: 20px;
+    background-color: #000;
+    opacity: 0.9;
+    border-radius: 10px;
+}
+
+.firstTimeOnNetflixTitle {
+    font-size: 15px;
+    color: #8c8c8c;
+    margin-top: 20px;
+}
+
+.firstTimeOnNetflixSubTitle {
+    font-size: 15px;
+    color: #8c8c8c;
+    margin-top: 10px;
+}

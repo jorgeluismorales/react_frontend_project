@@ -23,7 +23,7 @@ const NotFoundPage = () => {
         </div>
         <button
           className={styles.backToHomeBtn}
-          onClick={() => navigate('/')}
+          onClick={() => navigate('/home')}
         >
           Inicio de Netflix
         </button>
