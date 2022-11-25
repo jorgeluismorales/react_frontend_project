@@ -1,9 +1,9 @@
 import axios from "axios";
-import { apiNetflix } from "../utils/endPointApi";
+import apiNetflix from "../utils/endPointApi";
 
 const apiBuilder = {
-    tryGetPopularMovies: async (language, page = 1) => {
-        const url = `${apiNetflix.access.url}${apiNetflix.entity.movie}${apiNetflix.state.popular}${apiNetflix.access.apiKey}${apiNetflix.language[language]}${apiNetflix.access.pagination}${page}`;
+    tryGetPopularMovies: async ( page = 1) => {
+        const url = `${apiNetflix.access.url}${apiNetflix.entity.movie}${apiNetflix.state.popular}${apiNetflix.access.apiKey}${apiNetflix.language.spanish}${apiNetflix.access.pagination}${page}`;
             try {
                 const res = await axios(url)
                 console.log(res)
@@ -71,8 +71,8 @@ const apiBuilder = {
                 return []
             }
         },
-    tryGetImg: (path, quality = apiNetflix.quality.backdropw500) => {
-                return `${apiNetflix.access.imageUrl}${apiNetflix.quality[quality]}${path}`;
+    tryGetImg: (path) => {
+                return `${apiNetflix.access.imageUrl}${apiNetflix.quality.backdropw500}${path}`;
         },
     }
 

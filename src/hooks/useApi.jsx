@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import apiBuilder from './getApi';
 
-const useApi = (language = "spanish", page = 1) => {
+const useApi = (language, page = 1) => {
 
 const [values, setValues] = useState([])
 
@@ -14,11 +14,13 @@ const getData = async () => {
     };
 }
 
+console.log(values)
+
 useEffect(() => {
     getData()
 }, [page]);
 
-return values;
+return [values];
 
 }
 

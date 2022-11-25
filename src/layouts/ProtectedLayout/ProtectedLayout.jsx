@@ -3,6 +3,8 @@ import Footer from "../../components/Footer/Footer"
 import NavBar from "../../components/NavBar/NavBar"
 import app from "../../firebase/config";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import "./Layout.module.css"
+
 const auth = getAuth(app);
 
 const ProtectedLayout = () => {
