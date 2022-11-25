@@ -56,7 +56,6 @@ const NavBar = () => {
             <li><Link className="dropdown-item" onClick={closeSession}>Cerrar Sesión</Link></li>
           </ul>
         </div>
-
       </nav>
       </>
   )
