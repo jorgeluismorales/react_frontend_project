@@ -4,13 +4,11 @@ import apiBuilder from "../../hooks/getApi";
 
 const Card = ({ title, imgPath }) => {
   const [img, setImg] = useState(null);
-  console.log(img)
 
   useEffect(() => {
     const url = apiBuilder.tryGetImg(imgPath);
     setImg(url);
   }, [imgPath]);
-  console.log(img)
 
   return (
     <>

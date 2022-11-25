@@ -14,8 +14,6 @@ const getData = async () => {
     };
 }
 
-console.log(values)
-
 useEffect(() => {
     getData()
 }, [page]);
