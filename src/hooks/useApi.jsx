@@ -3,7 +3,11 @@ import apiBuilder from './getApi';
 
 const useApi = (entity, page = 1) => {
 
-const [values, setValues] = useState([])
+const [values, setValues] = useState([]);
+
+useEffect(() => {
+    getData()
+}, [page]);
 
 const getData = async () => {
     const res = await apiBuilder.tryGetPopularMovies(entity, page);
@@ -14,9 +18,6 @@ const getData = async () => {
     };
 }
 
-useEffect(() => {
-    getData()
-}, [page]);
 
 return [values];
 
