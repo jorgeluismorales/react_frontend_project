@@ -9,7 +9,7 @@ const HomePage = () => {
     <>
   <Separator height={"60px"} />
       <Carousel
-        entity={apiNetflix.state.popular}
+        entity={apiNetflix.entity.movie}
         title={"Peliculas populares"}
       />
   <div>HomePage</div>
