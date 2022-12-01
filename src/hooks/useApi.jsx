@@ -1,12 +1,16 @@
 import { useEffect, useState } from 'react';
 import apiBuilder from './getApi';
 
-const useApi = (language, page = 1) => {
+const useApi = (entity, page = 1) => {
 
-const [values, setValues] = useState([])
+const [values, setValues] = useState([]);
+
+useEffect(() => {
+    getData()
+}, [page]);
 
 const getData = async () => {
-    const res = await apiBuilder.tryGetPopularMovies(language, page);
+    const res = await apiBuilder.tryGetPopularMovies(entity, page);
     if (res instanceof Error) {
         console.log(res.messange)
         }else{
@@ -14,9 +18,6 @@ const getData = async () => {
     };
 }
 
-useEffect(() => {
-    getData()
-}, [page]);
 
 return [values];
 
