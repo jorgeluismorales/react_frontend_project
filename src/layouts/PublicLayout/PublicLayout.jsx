@@ -25,8 +25,8 @@ const PublicLayout = () => {
     <div style={{
       backgroundSize: 'cover',
       backgroundColor: '#000',
-      width: "100%",
-      height:"auto",
+      width: "100vw",
+      height:"100vh",
       paddingBottom:"152px",
       backgroundPosition: 'center',
       backgroundImage: `url(https://assets.nflxext.com/ffe/siteui/vlv3/5aecc44d-2a1f-4313-8399-98df20908b64/d2e8fa91-c948-412f-b377-b9d9b9f2aa3f/AR-es-20221114-popsignuptwoweeks-perspective_alpha_website_small.jpg)`,

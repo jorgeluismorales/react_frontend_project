@@ -28,6 +28,10 @@
     font-size: 18px;
 }
 
+.inputRegister:focus {
+    outline: none;
+}
+
 .formRegister {
     display: flex;
     align-items: center;
