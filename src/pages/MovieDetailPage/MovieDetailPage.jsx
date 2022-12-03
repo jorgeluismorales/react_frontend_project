@@ -4,6 +4,9 @@ import { FaPlay } from 'react-icons/fa'
 import { GrAdd } from 'react-icons/gr'
 import styles from './MovieDetailPage.module.css'
 import Slider from "../../components/Slider/Slider"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { addFav } from "../../utils/functions"
 
 const MovieDetailPage = () => {
   const location = useLocation()
@@ -30,6 +33,12 @@ const MovieDetailPage = () => {
   const genres = movie?.genres.map(genre => genre.name).join(', ')
   const productionCompanies = movie?.production_companies.map(company => company.name).join(', ')
   const productionCountries = movie?.production_countries.map(country => country.name).join(', ')
+
+  const notify = () => {
+    toast.success("Agregado a favoritos", {
+      position: toast.POSITION.TOP_CENTER
+    });
+  }
 
   return (
     <div>
@@ -66,7 +75,11 @@ const MovieDetailPage = () => {
                       onClick={() => navigate(`/${type}/${id}/video`)}
                     >
                       <FaPlay /> VER AHORA
-                    </button> <button className={styles.addFavButton}><GrAdd /></button><br />
+                    </button>
+                    <button className={styles.addFavButton} onClick={() => {
+                      addFav(id, type, movie)
+                      notify()
+                    }}><GrAdd /></button><br />
                     <div style={{ width: '45%', marginTop: '10px' }}><p>{movie.overview}</p></div>
                   </div>
                 </div>
@@ -108,6 +121,18 @@ const MovieDetailPage = () => {
                   </div>
                 </div>
               </div>
+              <ToastContainer
+                position="bottom-center"
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+              />
             </div>
           )
       }
