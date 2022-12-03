@@ -1,5 +1,5 @@
 import React from 'react'
-import Card from 'react-credit-cards'
+import Card from 'react-credit-cards-2'
 
 import {
   formatCreditCardNumber,
@@ -7,7 +7,7 @@ import {
   formatExpirationDate
 } from '../../utils/cardValidations'
 
-import 'react-credit-cards/es/styles-compiled.css'
+import 'react-credit-cards-2/es/styles-compiled.css'
 
 const CreditCard = ({ formData, setFormData }) => {
 
