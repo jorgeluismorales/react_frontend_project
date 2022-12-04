@@ -34,7 +34,7 @@ const NavBar = () => {
                 <Link className="nav-link" to={'#'}>Novedades Populares</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to={'#'}>Mi lista</Link>
+                <Link className="nav-link" to={'/favorites'}>Mi lista</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to={'#'}>Explora por idiomas</Link>

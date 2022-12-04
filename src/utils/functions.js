@@ -1,9 +1,9 @@
 import app from "../firebase/config";
 import {
-  getAuth,
-  onAuthStateChanged
+    getAuth,
+    onAuthStateChanged
 } from "firebase/auth";
-import { getFirestore, doc, getDoc,  updateDoc } from "firebase/firestore";
+import { getFirestore, doc, getDoc, updateDoc } from "firebase/firestore";
 const firestore = getFirestore(app);
 
 const auth = getAuth(app);
@@ -33,4 +33,15 @@ export const addFav = async (id, type, movie) => {
             favorites: newFavorites
         });
     }
+};
+
+export const getFavs = async () => {
+    let user = {};
+    const docRef = doc(firestore, `users/${userEmail}`);
+    const userQuery = await getDoc(docRef);
+    if (userQuery.exists()) {
+        user = userQuery.data();
+
+    }
+    return user.favorites;
 };

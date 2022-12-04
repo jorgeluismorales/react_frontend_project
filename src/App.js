@@ -19,6 +19,7 @@ import {
   SignUpPage,
   TvGridPage,
   LoginHelpPage,
+  FavoritesPage,
 } from "./pages";
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
           <Route path="profile" element={<ProfilePage />} />
           <Route path="movie" element={<MoviesGridPage />} />
           <Route path="tv" element={<TvGridPage />} />
+          <Route path="favorites" element={<FavoritesPage />} />
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </>
