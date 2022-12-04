@@ -1,0 +1,19 @@
+.link{
+    color: #000;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.link:hover{
+    color: #000;
+    text-decoration: none;
+}
+
+.selectLanguage {
+    background-color: #000;
+    color: #fff;
+    border: #fff 1px solid;
+    padding: 10px 5px;
+    margin-right: 20px;
+    text-align: center;
+}
