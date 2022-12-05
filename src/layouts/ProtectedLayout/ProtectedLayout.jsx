@@ -12,7 +12,6 @@ const ProtectedLayout = () => {
 
 
    onAuthStateChanged(auth, (user) => {
-     console.log(user);
      if (!user) {
        navigate("/");
      }

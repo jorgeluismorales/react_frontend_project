@@ -3,7 +3,6 @@ import app from "../../firebase/config";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import LoginNavBar from "../../components/LoginNavbar/LoginNavbar";
 import RegisterForm from "../../components/RegisterForm/RegisterForm";
-import { Button } from "bootstrap";
 const auth = getAuth(app);
 
 const PublicLayout = () => {

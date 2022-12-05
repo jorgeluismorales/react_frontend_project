@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import {  createSearchParams, useSearchParams } from "react-router-dom";
+import { createSearchParams, useSearchParams } from "react-router-dom";
 import Loader from "../../components/Loader/Loader";
 import MoviesGrid from "../../components/MoviesGrid/MoviesGrid";
+import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 const PAGE_NUMBER = 1;
 
 const MoviesGridPage = () => {
 
+    const { t } = useTranslation();
     //USAR ESTE ENDPOINT PARA BUSCAR PELICULAS https://api.themoviedb.org/3/search/movie?api_key=2508dee2967eb61f3c6a05ef9df2826a&language=en-US&query=batman&page=1
 
     const [data, setData] = useState([]);
@@ -44,11 +47,11 @@ const MoviesGridPage = () => {
 
     return (
         <div className="container">
-            <input 
-            type="text" 
-            placeholder="Buscar pelicula"
-            onChange={(e) => {setSearch(createSearchParams({query: e.target.value}))}}
-            value={search.get("query")}
+            <input
+                type="text"
+                placeholder={t("searchMovie")}
+                onChange={(e) => { setSearch(createSearchParams({ query: e.target.value })) }}
+                value={search.get("query")}
             />
             <MoviesGrid data={data} />
             {loading && <Loader />}

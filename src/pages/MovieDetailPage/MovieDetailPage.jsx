@@ -7,8 +7,11 @@ import Slider from "../../components/Slider/Slider"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { addFav } from "../../utils/functions"
+import { useTranslation } from "react-i18next"
 
 const MovieDetailPage = () => {
+
+  const { t } = useTranslation()
   const location = useLocation()
   const navigate = useNavigate()
   const { type, id } = useParams()
@@ -35,7 +38,7 @@ const MovieDetailPage = () => {
   const productionCountries = movie?.production_countries.map(country => country.name).join(', ')
 
   const notify = () => {
-    toast.success("Agregado a favoritos", {
+    toast.success(t("addedToFavs"), {
       position: toast.POSITION.TOP_CENTER
     });
   }
@@ -74,7 +77,7 @@ const MovieDetailPage = () => {
                       className={styles.playButton}
                       onClick={() => navigate(`/${type}/${id}/video`)}
                     >
-                      <FaPlay /> VER AHORA
+                      <FaPlay /> {t("watchNow")}
                     </button>
                     <button className={styles.addFavButton} onClick={() => {
                       addFav(id, type, movie)
@@ -86,10 +89,10 @@ const MovieDetailPage = () => {
                 <div className="row-6 mt-4">
                   <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
                     <li className="nav-item" role="presentation">
-                      <button className="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">SUGERENCIAS</button>
+                      <button className="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">{t("suggestions")}</button>
                     </li>
                     <li className="nav-item" role="presentation">
-                      <button className="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">DETALLES</button>
+                      <button className="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">{t("details")}</button>
                     </li>
                   </ul>
                   <div className="tab-content" id="pills-tabContent">
@@ -105,14 +108,14 @@ const MovieDetailPage = () => {
                         </div>
 
                         <div className="col-4">
-                          <p><b>Año de estreno</b>: {type === 'movie' ? movie.release_date.split('-')[0] : movie.first_air_date.split('-')[0]}</p>
-                          <p><b>Genero</b>: {genres}</p>
-                          <p><b>Titulo original</b>: {type === 'movie' ? movie.original_title : movie.original_name}</p>
+                          <p><b>{t("releaseYear")}</b>: {type === 'movie' ? movie.release_date.split('-')[0] : movie.first_air_date.split('-')[0]}</p>
+                          <p><b>{t("genre")}</b>: {genres}</p>
+                          <p><b>{t("originalTitle")}</b>: {type === 'movie' ? movie.original_title : movie.original_name}</p>
                           <a href={movie.homepage} target='blank'><b>Home Page</b></a>
                         </div>
                         <div className="col-4">
-                          <p><b>Productora</b>: {productionCompanies}</p>
-                          <p><b>Pais</b>: {productionCountries}</p>
+                          <p><b>{t("producer")}</b>: {productionCompanies}</p>
+                          <p><b>{t("country")}</b>: {productionCountries}</p>
 
                         </div>
                       </div>

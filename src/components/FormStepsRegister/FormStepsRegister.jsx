@@ -9,11 +9,13 @@ import {
   createUserWithEmailAndPassword
 } from "firebase/auth";
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
-import { async } from '@firebase/util';
+import { useTranslation } from 'react-i18next';
 const firestore = getFirestore(app);
 const auth = getAuth(app);
 
 const FormStepsRegister = () => {
+
+  const { t } = useTranslation();
 
   const [page, setPage] = useState(0);
   const [formData, setFormData] = useState({
@@ -27,7 +29,12 @@ const FormStepsRegister = () => {
     issuer: '',
     focused: ''
   });
-  const FormTitles = ["Crea una contraseña para comenzar con tu membresía", "Selecciona tu plan", "Ingresa los datos de tu tarjeta"];
+
+  const createPassword = t("createPassword");
+  const selectPlan = t("selectPlan")
+  const paymentMethod = t("paymentMethod")
+
+  const FormTitles = [ createPassword , selectPlan, paymentMethod];
 
   const PageToDisplay = () => {
     switch (page) {
@@ -74,7 +81,6 @@ const FormStepsRegister = () => {
 
   return (
     <div className={styles.form}>
-      <div className="progressbar"></div>
       <div className={styles.formContainer}>
         <div>
           <h1 className={styles.title}>{FormTitles[page]}</h1>
@@ -88,7 +94,7 @@ const FormStepsRegister = () => {
             onClick={() => { page === FormTitles.length - 1 ? handleSubmmit() : setPage((currPage) => currPage + 1); }}
             disabled={page === 0 && (formData.password.trim() === '' || formData.email.trim() === '') || page === 1 && formData.plan.trim() === '' || page === 2 && (formData.name.trim() === '' || formData.number.trim() === '' || formData.expiry.trim() === '' || formData.cvc.trim() === '')}
           >
-            Siguiente
+            {t("next")}
           </button>
         </div>
       </div>

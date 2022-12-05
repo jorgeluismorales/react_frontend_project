@@ -8,8 +8,11 @@ import {
 } from '../../utils/cardValidations'
 
 import 'react-credit-cards-2/es/styles-compiled.css'
+import { useTranslation } from 'react-i18next'
 
 const CreditCard = ({ formData, setFormData }) => {
+
+  const { t } = useTranslation();
 
   const handleCallback = ({ issuer }, isValid) => {
     if (isValid) {
@@ -50,7 +53,7 @@ const CreditCard = ({ formData, setFormData }) => {
 
           <div className="col-6">
             <div className='form-group'>
-              <small>Name on card:</small>
+              <small>{t("nameOnCard")}:</small>
 
               <input
                 type='text'
@@ -64,7 +67,7 @@ const CreditCard = ({ formData, setFormData }) => {
               />
             </div>
             <div className='form-group'>
-              <small>Card Number:</small>
+              <small>{t("cardNumber")}:</small>
 
               <input
                 type='tel'
@@ -85,7 +88,7 @@ const CreditCard = ({ formData, setFormData }) => {
           <div className="col-6">
 
             <div className='form-group'>
-              <small>Expiration Date:</small>
+              <small>{t("expiryDate")}:</small>
 
               <input
                 type='tel'

@@ -8,11 +8,13 @@ import {
 
 } from "firebase/auth";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const auth = getAuth(app);
 
 const LoginHelpPage = () => {
 
+    const { t } = useTranslation();
     const [email, setEmail] = useState("");
 
     const handleResetPassword = async (e) => {
@@ -26,23 +28,23 @@ const LoginHelpPage = () => {
     };
     return (
         <>
-        <div className={styles.navContainer}>
-            <NetflixLogo className={styles.logo} />
-            <Link to={'/signin'} className={styles.link}>Iniciar sesión</Link>
-        </div>
-        <div className={styles.container}>
-            <form className={styles.loginForm} onSubmit={handleResetPassword}>
-            <h1 className={styles.title}>Olvidaste tu Email/contraseña</h1>
-                <input
-                    type="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className={styles.inputForm}
-                />
-                <button type="submit" className={styles.resetPassBtn}>Cambiar contraseña</button>
-            </form>
-        </div>
+            <div className={styles.navContainer}>
+                <NetflixLogo className={styles.logo} />
+                <Link to={'/signin'} className={styles.link}>{t("signIn")}</Link>
+            </div>
+            <div className={styles.container}>
+                <form className={styles.loginForm} onSubmit={handleResetPassword}>
+                    <h1 className={styles.title}>{t("forgotYourEmailPassword")}</h1>
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className={styles.inputForm}
+                    />
+                    <button type="submit" className={styles.resetPassBtn}>{t("changePassword")}</button>
+                </form>
+            </div>
         </>
     )
 }

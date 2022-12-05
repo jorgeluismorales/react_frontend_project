@@ -1,10 +1,11 @@
 import axios from "axios";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import ReactStarRating from "react-star-ratings-component";
 
 const RatingMovie = ({ type, id }) => {
 
-    console.log(type, id)
+    const {t} = useTranslation();
 
     const [ratingSend, setRatingSend] = useState(false);
 
@@ -27,12 +28,11 @@ const RatingMovie = ({ type, id }) => {
                 spaceBetweenStar="15px"
                 disableOnSelect={ratingSend}
                 onSelectStar={rating => {
-                    console.log(rating);
                     rate(rating);
                     setRatingSend(true);
                 }}
             />
-            {ratingSend && <p>Gracias por tu puntuación</p>}
+            {ratingSend && <p>{t("rating")}</p>}
         </>
     )
 }

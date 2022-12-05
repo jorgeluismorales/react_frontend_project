@@ -19,7 +19,7 @@ const CreatePassword = ({ formData, setFormData }) => {
 
       <input
         type="password"
-        placeholder='Agrega una contraseña'
+        placeholder='Password'
         value={formData.password}
         onChange={(e) => setFormData({ ...formData, password: e.target.value })}
         className={styles.input}
