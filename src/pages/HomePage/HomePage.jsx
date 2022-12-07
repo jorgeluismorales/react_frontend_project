@@ -1,7 +1,6 @@
 import React from "react";
 import Carousel from "../../components/Carousel/Carousel";
 import Separator from "../../components/Separator/Separator"
-import apiNetflix  from "../../utils/endPointApi";
 
 const HomePage = () => {
 
@@ -10,8 +9,13 @@ const HomePage = () => {
     <>
   <Separator height={"60px"} />
       <Carousel
-        entity={apiNetflix.entity.movie}
+        entity={"movie"}
         title={"Peliculas populares"}
+      />
+        <Separator height={"60px"} />
+      <Carousel
+        entity={"series"}
+        title={"Series Populares"}
       />
   <div>HomePage</div>
   </>

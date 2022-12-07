@@ -1,6 +1,6 @@
 .card {
   background-color: rgb(54, 54, 54);
-  margin: 0.2em;
+  margin: 0.1em;
   height: 150px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -9,6 +9,8 @@
 
 .card:hover {
   transform: scale(1.5);
+  width: 200px;
+  height: 180px;;
 }
 
 .card_title {
@@ -28,6 +30,6 @@
 
 .card_title:hover {
   opacity: 1;
-  padding-top: 22px;
+  padding-top: 30px;
   padding-left: 30px;
 }
