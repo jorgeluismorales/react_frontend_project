@@ -1,21 +1,39 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import Spinner from '../Loader/Loader';
+import InfiniteScroll from 'react-infinite-scroll-component';
+import { useMovies } from '../../hooks/useMovies';
 import styles from './MoviesGrid.module.css'
+import MovieCard from '../MovieCard/MovieCard';
+import { useLocation } from 'react-router-dom';
 
-const MoviesGrid = ({ data }) => {
-    const navigate = useNavigate();
+const MoviesGrid = ({ search }) => {
+
+
+    const location = useLocation()
+
+    const type = location.pathname.includes('tv') ? 'tv' : 'movie'
+
+    const { movies, isLoading, hasNextPage, fetchNextPage } = useMovies(search, type);
+
+    if (!isLoading && movies.length === 0) {
+        return <h1>No hay peliculas</h1>;
+    }
     return (
-        <div className="row gap">
-            {data.map((movie) => (
-                <div key={Math.random() * movie.id} onClick={() => navigate(`/movie/${movie.id}`)} className="col-3" style={{ marginBottom: '20px' }}>
 
-                    <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} alt={movie.title} className={styles.card}/>
-                    <h5>{movie.title}</h5>
+        <InfiniteScroll
+            dataLength={movies.length}
+            hasMore={hasNextPage || isLoading}
+            next={() => fetchNextPage()}
+            loader={<Spinner />}
+        >
 
-                </div>
-            ))}
+            <ul className={styles.moviesGrid}>
+                {movies.map((movie) => (
+                    <MovieCard key={movie.id} movie={movie} />
+                ))}
+            </ul>
+        </InfiniteScroll>
 
-        </div>
+
     )
 }
 

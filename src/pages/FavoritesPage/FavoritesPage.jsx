@@ -16,6 +16,7 @@ const FavoritesPage = () => {
 
     console.log(favs)
     return (
+        <div className={styles.container}>
         <div className="container mt-4">
             <div className='row gap'>
                 {favs && favs.map(fav => (
@@ -27,6 +28,7 @@ const FavoritesPage = () => {
                     </div>
                 ))}
             </div>
+        </div>
         </div>
     )
 }
