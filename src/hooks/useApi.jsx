@@ -10,7 +10,7 @@ useEffect(() => {
 }, [page]);
 
 const getData = async () => {
-    const res = await apiBuilder.tryGetPopular(entity,state, language, page);
+    const res = await apiBuilder.tryGet(entity,state, language, page);
     if (res instanceof Error) {
         console.log(res.messange)
         }else{

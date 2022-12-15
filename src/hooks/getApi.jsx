@@ -2,7 +2,7 @@ import axios from "axios";
 import apiNetflix from "../utils/endPointApi";
 
 const apiBuilder = {
-    tryGetPopular: async (entity, state, language,  page = 1) => {
+    tryGet: async (entity, state, language,  page = 1) => {
         const url = `${apiNetflix.access.url}${apiNetflix.entity[entity]}${apiNetflix.state[state]}${apiNetflix.access.apiKey}${apiNetflix.language[language]}${apiNetflix.access.pagination}${page}`;
             try {
                 const res = await axios(url)
