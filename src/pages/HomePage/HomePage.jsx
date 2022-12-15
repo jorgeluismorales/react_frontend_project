@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./Homepage.css"
 import Carousel from "../../components/Carousel/Carousel";
 import SelectProfile from "../../components/SelectProfile/SelectProfile";
 import Separator from "../../components/Separator/Separator"
@@ -17,19 +18,42 @@ const HomePage = () => {
 
   return (
     <>
-      <Separator height={"60px"} />
+      {/* {
+        showModal && <SelectProfile setShowModal={setShowModal} />
+      } */}
+
+      <Separator height={"40px"} />
       <Carousel
         entity={"movie"}
+        state={"popular"}
+        language={"spanish"}
         title={"Peliculas populares"}
       />
-      <Separator height={"60px"} />
+
+      <Separator height={"40px"} />
       <Carousel
         entity={"series"}
+        state={"popular"}
+        language={"spanish"}
         title={"Series Populares"}
       />
-      {
-        showModal && <SelectProfile setShowModal={setShowModal} />
-      }
+
+<Separator height={"40px"} />
+      <Carousel
+        entity={"movie"}
+        state={"topRated"}
+        language={"spanish"}
+        title={"Peliculas mejor valoradas"}
+      />
+
+<Separator height={"40px"} />
+      <Carousel
+        entity={"series"}
+        state={"topRated"}
+        language={"spanish"}
+        title={"Series mejor valoradas"}
+      />
+
     </>
   )
 

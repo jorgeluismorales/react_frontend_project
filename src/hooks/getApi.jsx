@@ -2,8 +2,8 @@ import axios from "axios";
 import apiNetflix from "../utils/endPointApi";
 
 const apiBuilder = {
-    tryGetPopular: async (entity,  page = 1) => {
-        const url = `${apiNetflix.access.url}${apiNetflix.entity[entity]}${apiNetflix.state.popular}${apiNetflix.access.apiKey}${apiNetflix.language.spanish}${apiNetflix.access.pagination}${page}`;
+    tryGetPopular: async (entity, state, language,  page = 1) => {
+        const url = `${apiNetflix.access.url}${apiNetflix.entity[entity]}${apiNetflix.state[state]}${apiNetflix.access.apiKey}${apiNetflix.language[language]}${apiNetflix.access.pagination}${page}`;
             try {
                 const res = await axios(url)
                 console.log(res)
@@ -12,8 +12,8 @@ const apiBuilder = {
                 return []
             }
         },
-    tryGetTopRatedMovies: async (language, page = 1) => {
-        const url = `${apiNetflix.access.url}${apiNetflix.entity.movie}${apiNetflix.state.topRated}${apiNetflix.access.apiKey}${apiNetflix.language[language]}${apiNetflix.access.pagination}${page}`;
+    tryGetTopRated: async (entity, language, page = 1) => {
+        const url = `${apiNetflix.access.url}${apiNetflix.entity[entity]}${apiNetflix.state.topRated}${apiNetflix.access.apiKey}${apiNetflix.language[language]}${apiNetflix.access.pagination}${page}`;
             try {
                 const res = await axios(url)
                 console.log(res)
