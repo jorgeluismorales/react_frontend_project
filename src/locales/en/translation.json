@@ -57,5 +57,6 @@
     "producer": "Producer",
     "country": "Country",
     "forgotYourEmailPassword": "Forgot your email or password?",
-    "changePassword": "Change Password"
+    "changePassword": "Change Password",
+    "whoIsWatching": "Who's watching?"
 }
