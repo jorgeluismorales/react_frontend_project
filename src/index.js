@@ -14,9 +14,11 @@ import { SelectProfileProvider } from './context/SelectProfileContext';
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: Infinity,
+      staleTime: 1000 * 90,
       refetchOnWindowFocus: false,
-      cacheTime: Infinity,
+      cacheTime: 1000 * 90,
+      refetchOnMount: 'always',
+      refetchOnReconnect: 'always'
     }
   }
 });

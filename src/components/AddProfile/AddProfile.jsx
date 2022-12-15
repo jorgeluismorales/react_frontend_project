@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./AddProfile.module.css";
 import { addUserProfile } from "../../utils/functions";
 
-const AddProfile = ({ setAddProfileModal }) => {
+const AddProfile = ({ closeModal }) => {
 
     const [image, setImage] = useState(null);
     const [name, setName] = useState(null);
@@ -16,10 +16,6 @@ const AddProfile = ({ setAddProfileModal }) => {
         getRandomImage().then(image => setImage(image));
     }, []);
 
-    const closeModal = () => {
-        setAddProfileModal(false);
-    }
-
     const addProfile = () => {
         const newProfile = {
             name,
@@ -29,7 +25,7 @@ const AddProfile = ({ setAddProfileModal }) => {
         addUserProfile(newProfile);
         setImage(null);
         setName(null);
-        setAddProfileModal(false);
+        closeModal();
     }
     return (
         <div className={styles.container}>

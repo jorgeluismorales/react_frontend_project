@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react"
 import Logo from "../../assets/imagen/logoIcon.svg"
+import Avatar from "../../assets/imagen/avatar.png"
 import "../NavBar/NavBar.css"
 import { Link, useNavigate } from "react-router-dom"
 import app from "../../firebase/config";
@@ -13,12 +15,23 @@ const NavBar = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
+  const [imgProfile, setImgProfile] = useState(null);
+
   const closeSession = () => {
     navigate("/");
     auth.signOut();
     localStorage.removeItem("modal");
     localStorage.removeItem("profile");
   }
+
+  useEffect( () => {
+    if (profile) {
+      setImgProfile(profile);
+    }
+  }, [profile] )
+
+  console.log('profile',profile)
+  console.log('img',imgProfile)
 
   return (
     <>
@@ -45,7 +58,7 @@ const NavBar = () => {
 
         <div className="dropdown">
           <button className="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src={profile} width="30em" alt="avatar" />
+            <img src={Avatar} width="30em" alt="avatar" />
           </button>
           <ul className="dropdown-menu dropdown-menu-dark dropdown-menu-lg-end">
             <li><Link className="dropdown-item" to={"#"}>{t("account")}</Link></li>

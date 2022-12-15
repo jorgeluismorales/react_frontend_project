@@ -11,10 +11,10 @@ const TvGridPage = () => {
   const debouncedSearch = useDebounce(search, 300);
 
   return (
-    <div>
+    <>
       <Search />
-      <MoviesGrid key={debouncedSearch} search={debouncedSearch} />
-    </div>
+      <MoviesGrid search={debouncedSearch} />
+    </>
   )
 }
 

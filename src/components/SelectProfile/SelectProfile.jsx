@@ -11,16 +11,16 @@ const SelectProfile = ({ setShowModal }) => {
     const { t } = useTranslation()
     const [profiles, setProfiles] = useState([]);
     const [addProfileModal, setAddProfileModal] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const fetchProfiles = async () => {
             const profiles = await getProfiles();
-            setProfiles(profiles);
+           await setProfiles(profiles);
+           await setIsLoading(false);
         };
         fetchProfiles();
     }, [addProfileModal]);
-
-    console.log(profiles);
 
     const addProfile = () => {
         setAddProfileModal(true);
@@ -31,6 +31,13 @@ const SelectProfile = ({ setShowModal }) => {
         localStorage.setItem("modal", false);
         setShowModal(false);
     }
+
+    const closeModal = () => {
+        setAddProfileModal(false);
+        setAddProfileModal(false);
+    }
+
+    if(isLoading) return <h1>Loading...</h1>
 
     return (
         <div className={styles.modalProfile}>
@@ -52,7 +59,7 @@ const SelectProfile = ({ setShowModal }) => {
                 </div>
             </div>
             {
-                addProfileModal && <AddProfile setAddProfileModal={setAddProfileModal} />
+                addProfileModal && <AddProfile closeModal={closeModal} />
             }
         </div>
     )

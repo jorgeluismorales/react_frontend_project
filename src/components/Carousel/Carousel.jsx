@@ -5,19 +5,15 @@ import useApi from "../../hooks/useApi";
 import Card from "../Card/Card";
 import { settingsSlider } from "./settings";
 
-const Carousel = ({ entity, state, language, title }) => {
+const Carousel = ({ entity, state, language, title, type }) => {
   const [values] = useApi(entity, state, language);
-
-  const location = useLocation()
-
-  const type = location.pathname.includes('tv') ? 'tv' : 'movie'
 
   return (
     <>
       <div>
         <h1
           style={{
-            color: "White",
+            color: "black",
           }}
         >
           {title}

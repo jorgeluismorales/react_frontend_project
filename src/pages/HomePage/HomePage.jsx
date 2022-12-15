@@ -27,6 +27,7 @@ const HomePage = () => {
         entity={"movie"}
         state={"popular"}
         language={"spanish"}
+        type={"movie"}
         title={"Peliculas populares"}
       />
 
@@ -35,6 +36,7 @@ const HomePage = () => {
         entity={"series"}
         state={"popular"}
         language={"spanish"}
+        type={"tv"}
         title={"Series Populares"}
       />
 
@@ -43,6 +45,7 @@ const HomePage = () => {
         entity={"movie"}
         state={"topRated"}
         language={"spanish"}
+        type={"movie"}
         title={"Peliculas mejor valoradas"}
       />
 
@@ -51,6 +54,7 @@ const HomePage = () => {
         entity={"series"}
         state={"topRated"}
         language={"spanish"}
+        type={"tv"}
         title={"Series mejor valoradas"}
       />
 
